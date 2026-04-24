@@ -4,6 +4,7 @@ pipeline {
   options {
     timestamps()
     disableConcurrentBuilds()
+    skipDefaultCheckout()
   }
 
   environment {
@@ -16,13 +17,13 @@ pipeline {
   }
 
   stages {
-    stage('Checkout') {
+    stage('Sync GitHub Source') {
       steps {
         checkout scm
       }
     }
 
-    stage('Validate') {
+    stage('Verify App Integrity') {
       steps {
         sh '''
           set -eu
@@ -55,13 +56,13 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
+    stage('Redeploy Dashboard Stack') {
       steps {
         sh 'chmod +x scripts/deploy.sh && ./scripts/deploy.sh'
       }
     }
 
-    stage('Smoke Test') {
+    stage('Validate Routes And Live Data') {
       steps {
         sh '''
           set -eu
@@ -88,15 +89,6 @@ pipeline {
           IFS="$OLD_IFS"
         '''
       }
-    }
-  }
-
-  post {
-    success {
-      echo 'Deployment complete. IDS dashboard is live.'
-    }
-    failure {
-      echo 'Pipeline failed. Check the build logs for the failing stage.'
     }
   }
 }
