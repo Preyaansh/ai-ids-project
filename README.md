@@ -43,7 +43,7 @@ Pipeline flow:
 3. GitHub webhook calls Jenkins through ngrok
 4. Jenkins validates the project
 5. Jenkins redeploys the Docker app
-6. Jenkins smoke-tests the live site
+6. Jenkins smoke-tests the live site and all 4 pages
 
 Files added for CI/CD:
 

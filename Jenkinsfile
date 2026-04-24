@@ -8,6 +8,7 @@ pipeline {
 
   environment {
     APP_URL = 'http://127.0.0.1:8082'
+    APP_PAGES = 'dashboard.html,monitor.html,alerts.html,analytics.html'
   }
 
   triggers {
@@ -25,6 +26,25 @@ pipeline {
       steps {
         powershell 'python -m py_compile server.py'
         powershell 'docker compose config'
+        powershell '''
+          $required = @(
+            "index.html",
+            "dashboard.html",
+            "monitor.html",
+            "alerts.html",
+            "analytics.html",
+            "app.js",
+            "styles.css",
+            "server.py",
+            "ids_logs.json"
+          )
+
+          foreach ($file in $required) {
+            if (-not (Test-Path $file)) {
+              throw "Missing required project file: $file"
+            }
+          }
+        '''
       }
     }
 
@@ -36,7 +56,7 @@ pipeline {
 
     stage('Smoke Test') {
       steps {
-        powershell @'
+        powershell '''
           $response = Invoke-WebRequest -UseBasicParsing $env:APP_URL
           if ($response.StatusCode -ne 200) {
             throw "App health check failed with status $($response.StatusCode)"
@@ -46,7 +66,15 @@ pipeline {
           if ($logs.StatusCode -ne 200) {
             throw "Log file check failed with status $($logs.StatusCode)"
           }
-        '@
+
+          $pages = $env:APP_PAGES.Split(",")
+          foreach ($page in $pages) {
+            $pageResponse = Invoke-WebRequest -UseBasicParsing "$env:APP_URL/$page"
+            if ($pageResponse.StatusCode -ne 200) {
+              throw "Page check failed for $page with status $($pageResponse.StatusCode)"
+            }
+          }
+        '''
       }
     }
   }

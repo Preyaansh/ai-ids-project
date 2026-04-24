@@ -44,6 +44,12 @@ git branch -M main
 git push -u origin main
 ```
 
+Current project remote:
+
+```text
+https://github.com/Preyaansh/ai-ids-project.git
+```
+
 ## Step 2: Create the Jenkins pipeline job
 
 In Jenkins:
@@ -58,6 +64,12 @@ In Jenkins:
 
 ```text
 Jenkinsfile
+```
+
+Recommended Jenkins job name:
+
+```text
+ids-dashboard-pipeline
 ```
 
 ## Step 3: Expose Jenkins using ngrok
@@ -102,6 +114,12 @@ Just the push event
 
 7. Save webhook
 
+Important:
+
+- The webhook must point to Jenkins, not the IDS dashboard app
+- Your dashboard public link and Jenkins public link are two different ngrok URLs
+- If one ngrok session is already running for the dashboard, stop it before starting the Jenkins tunnel unless you intentionally want two tunnels
+
 ## Step 5: What Jenkins does on every push
 
 When you push code:
@@ -112,6 +130,7 @@ When you push code:
 4. Jenkins validates:
    - `server.py`
    - `docker compose config`
+   - required frontend files exist
 5. Jenkins runs:
 
 ```powershell
@@ -124,6 +143,7 @@ When you push code:
 7. Jenkins runs smoke tests:
    - homepage returns `200`
    - `ids_logs.json` returns `200`
+   - all 4 project pages return `200`
 
 If all checks pass, deployment is complete.
 
