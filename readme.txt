@@ -1,0 +1,4 @@
+- Python for machine learning model
+- JavaScript for backend using Node.js
+- React (JavaScript) for frontend
+- Python for Ryu SDN controller
