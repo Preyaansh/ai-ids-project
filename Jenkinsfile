@@ -8,7 +8,7 @@ pipeline {
   }
 
   environment {
-    APP_URL = 'http://127.0.0.1:8082'
+    APP_URL = 'http://127.0.0.1:9000'
     APP_PAGES = 'dashboard.html,monitor.html,alerts.html,analytics.html'
   }
 

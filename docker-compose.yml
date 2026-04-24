@@ -7,7 +7,7 @@ services:
       - "python"
       - "/app/server.py"
     ports:
-      - "8082:8000"
+      - "9000:8000"
     volumes:
       - .:/app:ro
     restart: unless-stopped
@@ -23,7 +23,7 @@ services:
     environment:
       NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN}
     ports:
-      - "4040:4040"
+      - "4050:4040"
     restart: unless-stopped
     profiles:
       - tunnel
