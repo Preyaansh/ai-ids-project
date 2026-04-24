@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentinel IDS - Alerts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <p class="eyebrow">Network Defense</p>
+          <h1>Sentinel IDS</h1>
+          <p class="sidebar-copy">
+            Real-time intrusion visibility for normal traffic, HTTP flood spikes,
+            and SYN flood bursts.
+          </p>
+        </div>
+
+        <nav class="nav-links">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="monitor.html">Live Monitor</a>
+          <a href="alerts.html">Alerts &amp; History</a>
+          <a href="analytics.html">Analytics</a>
+        </nav>
+
+        <div class="dock-card">
+          <p class="dock-label">Feed Health</p>
+          <div class="feed-row">
+            <span id="poll-indicator" class="indicator"></span>
+            <span id="poll-status">Waiting for logs...</span>
+          </div>
+          <p id="last-updated" class="dock-meta">No refresh yet</p>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="hero">
+          <div>
+            <p class="eyebrow">Attack Evidence</p>
+            <h2>Alerts &amp; History</h2>
+          </div>
+          <div class="hero-badge">ALERTS</div>
+        </header>
+
+        <section class="panel-group">
+          <div class="section-heading">
+            <div></div>
+            <div class="filters" id="filters">
+              <button class="filter active" data-filter="ALL">All</button>
+              <button class="filter" data-filter="HTTP_FLOOD">HTTP</button>
+              <button class="filter" data-filter="SYN_FLOOD">SYN</button>
+            </div>
+          </div>
+
+          <div class="two-column history-layout">
+            <article class="panel history-panel">
+              <div class="panel-head">
+                <h3>Alert Log</h3>
+                <span class="chip">Latest first</span>
+              </div>
+              <div class="table-shell">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Type</th>
+                      <th>Severity</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="alerts-table"></tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <h3>Attack Counts</h3>
+                <span class="chip">Accumulated alerts</span>
+              </div>
+              <div class="attack-counts">
+                <div class="count-box">
+                  <p>HTTP Flood</p>
+                  <strong id="http-count">0</strong>
+                </div>
+                <div class="count-box">
+                  <p>SYN Flood</p>
+                  <strong id="syn-count">0</strong>
+                </div>
+              </div>
+              <div class="history-note" id="history-note"></div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

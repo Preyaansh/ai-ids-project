@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentinel IDS - Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <p class="eyebrow">Network Defense</p>
+          <h1>Sentinel IDS</h1>
+          <p class="sidebar-copy">
+            Real-time intrusion visibility for normal traffic, HTTP flood spikes,
+            and SYN flood bursts.
+          </p>
+        </div>
+
+        <nav class="nav-links">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="monitor.html">Live Monitor</a>
+          <a href="alerts.html">Alerts &amp; History</a>
+          <a href="analytics.html">Analytics</a>
+        </nav>
+
+        <div class="dock-card">
+          <p class="dock-label">Feed Health</p>
+          <div class="feed-row">
+            <span id="poll-indicator" class="indicator"></span>
+            <span id="poll-status">Waiting for logs...</span>
+          </div>
+          <p id="last-updated" class="dock-meta">No refresh yet</p>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="hero">
+          <div>
+            <p class="eyebrow">Analytical View</p>
+            <h2>Analytics</h2>
+          </div>
+          <div class="hero-badge">ANALYTICS</div>
+        </header>
+
+        <section class="panel-group">
+          <div class="monitor-grid analytics-grid">
+            <article class="panel">
+              <div class="panel-head">
+                <h3>Normal vs Attack Traffic</h3>
+                <span class="chip">Aggregate share</span>
+              </div>
+              <div class="donut-wrap">
+                <div id="overall-donut" class="donut-chart large"></div>
+                <div id="overall-legend" class="legend"></div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <h3>Attack Type Distribution</h3>
+                <span class="chip">HTTP vs SYN alerts</span>
+              </div>
+              <div id="distribution-bars" class="distribution-bars"></div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <h3>Traffic Statistics</h3>
+                <span class="chip">Derived from summaries</span>
+              </div>
+              <div class="stats-stack">
+                <div class="stack-row">
+                  <span>Peak Traffic</span>
+                  <strong id="peak-traffic">0 conn/sec</strong>
+                </div>
+                <div class="stack-row">
+                  <span>Average Traffic</span>
+                  <strong id="avg-traffic">0 conn/sec</strong>
+                </div>
+                <div class="stack-row">
+                  <span>Total Events</span>
+                  <strong id="total-events">0</strong>
+                </div>
+                <div class="stack-row">
+                  <span>Total Alerts</span>
+                  <strong id="total-alerts">0</strong>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

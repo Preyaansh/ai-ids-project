@@ -1,0 +1,29 @@
+services:
+  ids-dashboard:
+    image: python:3.12-alpine
+    container_name: ids-dashboard
+    working_dir: /app
+    command:
+      - "python"
+      - "/app/server.py"
+    ports:
+      - "8082:8000"
+    volumes:
+      - .:/app:ro
+    restart: unless-stopped
+
+  ids-ngrok:
+    image: ngrok/ngrok:latest
+    container_name: ids-ngrok
+    depends_on:
+      - ids-dashboard
+    command:
+      - "http"
+      - "ids-dashboard:8000"
+    environment:
+      NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN}
+    ports:
+      - "4040:4040"
+    restart: unless-stopped
+    profiles:
+      - tunnel

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentinel IDS - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <p class="eyebrow">Network Defense</p>
+          <h1>Sentinel IDS</h1>
+          <p class="sidebar-copy">
+            Real-time intrusion visibility for normal traffic, HTTP flood spikes,
+            and SYN flood bursts.
+          </p>
+        </div>
+
+        <nav class="nav-links">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="monitor.html">Live Monitor</a>
+          <a href="alerts.html">Alerts &amp; History</a>
+          <a href="analytics.html">Analytics</a>
+        </nav>
+
+        <div class="dock-card">
+          <p class="dock-label">Feed Health</p>
+          <div class="feed-row">
+            <span id="poll-indicator" class="indicator"></span>
+            <span id="poll-status">Waiting for logs...</span>
+          </div>
+          <p id="last-updated" class="dock-meta">No refresh yet</p>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="hero">
+          <div>
+            <p class="eyebrow">Main Page</p>
+            <h2>Dashboard</h2>
+          </div>
+          <div class="hero-badge" id="hero-status-badge">NORMAL</div>
+        </header>
+
+        <section class="panel-group">
+          <div class="stats-grid">
+            <article class="stat-card status-card">
+              <p class="card-label">System Status</p>
+              <h4 id="system-status">Loading...</h4>
+              <p id="system-status-copy" class="muted">
+                Inspecting latest summary event.
+              </p>
+            </article>
+
+            <article class="stat-card">
+              <p class="card-label">Threat Level</p>
+              <h4 id="threat-level">-</h4>
+              <p id="threat-copy" class="muted">Awaiting detection data.</p>
+            </article>
+
+            <article class="stat-card">
+              <p class="card-label">Connections / sec</p>
+              <h4 id="connections-sec">0</h4>
+              <p class="muted">Derived from latest metrics total.</p>
+            </article>
+
+            <article class="stat-card">
+              <p class="card-label">Last Attack</p>
+              <h4 id="last-attack">No alerts yet</h4>
+              <p id="last-attack-time" class="muted">Monitoring log stream.</p>
+            </article>
+          </div>
+
+          <div class="two-column">
+            <article class="panel">
+              <div class="panel-head">
+                <h3>Traffic Counters</h3>
+                <span class="chip">Current snapshot</span>
+              </div>
+              <div class="traffic-counters">
+                <div class="counter normal">
+                  <p>Normal Traffic</p>
+                  <strong id="normal-traffic">0</strong>
+                </div>
+                <div class="counter attack">
+                  <p>Attack Traffic</p>
+                  <strong id="attack-traffic">0</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <h3>Current Attack Panel</h3>
+                <span class="chip danger">Live assessment</span>
+              </div>
+              <div id="attack-panel" class="attack-panel secure">
+                <div>
+                  <p class="eyebrow">System Secure</p>
+                  <h4>No active attack</h4>
+                  <p class="muted">Normal traffic is currently dominant.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

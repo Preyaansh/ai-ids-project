@@ -1,0 +1,132 @@
+# CI/CD Setup Guide
+
+This project supports a simple CI/CD flow:
+
+1. Developer edits code locally
+2. Developer runs `git push`
+3. GitHub sends a webhook to Jenkins
+4. Jenkins pulls the latest code
+5. Jenkins validates the project
+6. Jenkins redeploys the Dockerized app
+7. Jenkins checks that the website is up
+
+## Project files used for CI/CD
+
+- `Jenkinsfile`
+- `scripts/deploy.ps1`
+- `docker-compose.yml`
+
+## Before starting
+
+Make sure these are ready:
+
+- Docker Desktop is running
+- Jenkins is running and reachable on `http://127.0.0.1:8081`
+- `ngrok` is installed and authenticated
+- This project is pushed to a GitHub repository
+
+## Step 1: Put the project into Git
+
+If this folder is not yet a Git repo, run:
+
+```powershell
+cd C:\Users\Preyaansh Vij\Desktop\ids_data
+git init
+git add .
+git commit -m "Initial IDS dashboard commit"
+```
+
+Then create a GitHub repository and connect it:
+
+```powershell
+git remote add origin <your-github-repo-url>
+git branch -M main
+git push -u origin main
+```
+
+## Step 2: Create the Jenkins pipeline job
+
+In Jenkins:
+
+1. Create a new item
+2. Choose `Pipeline`
+3. Under Pipeline definition, choose `Pipeline script from SCM`
+4. Select `Git`
+5. Paste your repository URL
+6. Set branch to `*/main`
+7. Script path should be:
+
+```text
+Jenkinsfile
+```
+
+## Step 3: Expose Jenkins using ngrok
+
+GitHub must be able to reach Jenkins from the internet.
+Since Jenkins is local, expose Jenkins using ngrok:
+
+```powershell
+ngrok http 8081
+```
+
+This gives a public HTTPS URL like:
+
+```text
+https://something.ngrok-free.dev
+```
+
+## Step 4: Add GitHub webhook
+
+In your GitHub repository:
+
+1. Go to `Settings`
+2. Go to `Webhooks`
+3. Click `Add webhook`
+4. Payload URL:
+
+```text
+https://your-ngrok-url/github-webhook/
+```
+
+5. Content type:
+
+```text
+application/json
+```
+
+6. Choose:
+
+```text
+Just the push event
+```
+
+7. Save webhook
+
+## Step 5: What Jenkins does on every push
+
+When you push code:
+
+1. GitHub webhook calls Jenkins
+2. Jenkins starts the pipeline
+3. Jenkins checks out the latest code
+4. Jenkins validates:
+   - `server.py`
+   - `docker compose config`
+5. Jenkins runs:
+
+```powershell
+.\\scripts\\deploy.ps1
+```
+
+6. That script:
+   - stops the old containers
+   - starts the updated Docker app
+7. Jenkins runs smoke tests:
+   - homepage returns `200`
+   - `ids_logs.json` returns `200`
+
+If all checks pass, deployment is complete.
+
+## Final flow in one line
+
+Edit code -> `git push` -> GitHub webhook -> Jenkins pipeline -> Docker redeploy -> live app updated

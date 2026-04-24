@@ -1,0 +1,102 @@
+{"event": "SUMMARY", "timestamp": 1776987320.321023, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987348.905194, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987383.657663, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987344.561151, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 1, "normal_rate": 19, "total": 20}}
+{"event": "SUMMARY", "timestamp": 1776987386.125772, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 2, "normal_rate": 22, "total": 24}}
+{"event": "SUMMARY", "timestamp": 1776987468.929162, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987475.695333, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 0, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987473.640566, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 1, "total": 2}}
+{"event": "SUMMARY", "timestamp": 1776987475.639574, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 6, "total": 7}}
+{"event": "SUMMARY", "timestamp": 1776987398.533894, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 7, "total": 8}}
+{"event": "SUMMARY", "timestamp": 1776987464.559813, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 1, "normal_rate": 7, "total": 9}}
+{"event": "SUMMARY", "timestamp": 1776987473.599297, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 2, "normal_rate": 11, "total": 14}}
+{"event": "SUMMARY", "timestamp": 1776987534.893405, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987560.93359, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987560.734414, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 2, "total": 2}}
+{"event": "SUMMARY", "timestamp": 1776987560.78213, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 9, "total": 9}}
+{"event": "SUMMARY", "timestamp": 1776987535.471823, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 10, "total": 10}}
+{"event": "SUMMARY", "timestamp": 1776987588.917263, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987597.361181, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 1, "normal_rate": 0, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987607.671489, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 1, "normal_rate": 0, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987560.935492, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 5, "normal_rate": 1, "total": 6}}
+{"event": "SUMMARY", "timestamp": 1776987580.998881, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 5, "normal_rate": 2, "total": 7}}
+{"event": "SUMMARY", "timestamp": 1776987584.574442, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 6, "normal_rate": 3, "total": 9}}
+{"event": "SUMMARY", "timestamp": 1776987323.784653, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 7, "normal_rate": 6, "total": 13}}
+{"event": "SUMMARY", "timestamp": 1776987683.647547, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987657.239643, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 4, "total": 4}}
+{"event": "SUMMARY", "timestamp": 1776987745.605069, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 0, "total": 1}}
+{"event": "ALERT", "timestamp": 1776987745.826737, "type": "HTTP_FLOOD", "severity": "LOW", "src": "192.168.56.106", "dst": "192.168.56.104", "http_rate": 41, "syn_rate": 0}
+{"event": "SUMMARY", "timestamp": 1776987746.822519, "status": "HTTP_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 523, "syn_rate": 0, "normal_rate": 0, "total": 523}}
+{"event": "ALERT", "timestamp": 1776987747.692973, "type": "HTTP_FLOOD", "severity": "HIGH", "src": "192.168.56.106", "dst": "192.168.56.104", "http_rate": 542, "syn_rate": 0}
+{"event": "SUMMARY", "timestamp": 1776987749.343855, "status": "HTTP_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 556, "syn_rate": 0, "normal_rate": 0, "total": 556}}
+{"event": "ALERT", "timestamp": 1776987749.384028, "type": "HTTP_FLOOD", "severity": "HIGH", "src": "192.168.56.106", "dst": "192.168.56.104", "http_rate": 559, "syn_rate": 0}
+{"event": "ALERT", "timestamp": 1776987752.084647, "type": "HTTP_FLOOD", "severity": "HIGH", "src": "192.168.56.106", "dst": "192.168.56.104", "http_rate": 508, "syn_rate": 0}
+{"event": "SUMMARY", "timestamp": 1776987752.084647, "status": "HTTP_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 508, "syn_rate": 0, "normal_rate": 0, "total": 508}}
+{"event": "ALERT", "timestamp": 1776987754.070752, "type": "HTTP_FLOOD", "severity": "HIGH", "src": "192.168.56.106", "dst": "192.168.56.104", "http_rate": 460, "syn_rate": 0}
+{"event": "SUMMARY", "timestamp": 1776987754.070752, "status": "HTTP_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 460, "syn_rate": 0, "normal_rate": 0, "total": 460}}
+{"event": "ALERT", "timestamp": 1776987756.043217, "type": "HTTP_FLOOD", "severity": "HIGH", "src": "192.168.56.106", "dst": "192.168.56.104", "http_rate": 450, "syn_rate": 1}
+{"event": "SUMMARY", "timestamp": 1776987756.043217, "status": "HTTP_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 450, "syn_rate": 1, "normal_rate": 0, "total": 451}}
+{"event": "ALERT", "timestamp": 1776987704.57721, "type": "HTTP_FLOOD", "severity": "HIGH", "src": "10.0.2.15", "dst": "239.255.255.250", "http_rate": 482, "syn_rate": 22}
+{"event": "SUMMARY", "timestamp": 1776987704.57721, "status": "HTTP_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 482, "syn_rate": 22, "normal_rate": 1, "total": 505}}
+{"event": "ALERT", "timestamp": 1776987323.784764, "type": "HTTP_FLOOD", "severity": "HIGH", "src": "fd17:625c:f037:2:5365:7320:590f:a3b6", "dst": "2001:4860:4802:38::223", "http_rate": 482, "syn_rate": 23}
+{"event": "SUMMARY", "timestamp": 1776987323.784764, "status": "HTTP_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 482, "syn_rate": 23, "normal_rate": 3, "total": 508}}
+{"event": "SUMMARY", "timestamp": 1776987768.899587, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987775.686523, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 0, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987773.639281, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 1, "total": 2}}
+{"event": "SUMMARY", "timestamp": 1776987775.639924, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 2, "total": 3}}
+{"event": "SUMMARY", "timestamp": 1776987796.002923, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 1, "normal_rate": 0, "total": 1}}
+{"event": "ALERT", "timestamp": 1776987796.183681, "type": "SYN_FLOOD", "severity": "MEDIUM", "src": "192.168.56.106", "dst": "192.168.56.104", "http_rate": 0, "syn_rate": 121}
+{"event": "SUMMARY", "timestamp": 1776987797.498689, "status": "SYN_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 0, "syn_rate": 744, "normal_rate": 0, "total": 744}}
+{"event": "ALERT", "timestamp": 1776987797.546658, "type": "SYN_FLOOD", "severity": "HIGH", "src": "192.168.56.106", "dst": "192.168.56.104", "http_rate": 0, "syn_rate": 771}
+{"event": "ALERT", "timestamp": 1776987799.447385, "type": "SYN_FLOOD", "severity": "HIGH", "src": "192.168.56.106", "dst": "192.168.56.104", "http_rate": 0, "syn_rate": 1125}
+{"event": "SUMMARY", "timestamp": 1776987799.447385, "status": "SYN_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 0, "syn_rate": 1125, "normal_rate": 0, "total": 1125}}
+{"event": "ALERT", "timestamp": 1776987801.936159, "type": "SYN_FLOOD", "severity": "HIGH", "src": "192.168.56.106", "dst": "192.168.56.104", "http_rate": 0, "syn_rate": 1089}
+{"event": "SUMMARY", "timestamp": 1776987801.936159, "status": "SYN_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 0, "syn_rate": 1089, "normal_rate": 0, "total": 1089}}
+{"event": "ALERT", "timestamp": 1776987327.877888, "type": "SYN_FLOOD", "severity": "HIGH", "src": "fd17:625c:f037:2:5365:7320:590f:a3b6", "dst": "2404:6800:4002:831::200e", "http_rate": 0, "syn_rate": 1142}
+{"event": "SUMMARY", "timestamp": 1776987327.877888, "status": "SYN_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 0, "syn_rate": 1142, "normal_rate": 1, "total": 1143}}
+{"event": "ALERT", "timestamp": 1776987768.958772, "type": "SYN_FLOOD", "severity": "HIGH", "src": "10.0.2.15", "dst": "142.250.76.78", "http_rate": 0, "syn_rate": 1142}
+{"event": "SUMMARY", "timestamp": 1776987768.958772, "status": "SYN_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 0, "syn_rate": 1142, "normal_rate": 2, "total": 1144}}
+{"event": "ALERT", "timestamp": 1776987773.599482, "type": "SYN_FLOOD", "severity": "HIGH", "src": "192.168.56.104", "dst": "192.168.56.100", "http_rate": 0, "syn_rate": 1142}
+{"event": "SUMMARY", "timestamp": 1776987773.599482, "status": "SYN_FLOOD", "threat_level": "HIGH", "metrics": {"http_rate": 0, "syn_rate": 1142, "normal_rate": 5, "total": 1147}}
+{"event": "SUMMARY", "timestamp": 1776987824.576398, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 1, "normal_rate": 0, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987844.495885, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987983.643102, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776987944.591923, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 1, "normal_rate": 3, "total": 4}}
+{"event": "SUMMARY", "timestamp": 1776987906.445517, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 2, "normal_rate": 5, "total": 7}}
+{"event": "SUMMARY", "timestamp": 1776988028.164436, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988033.103674, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 14, "total": 14}}
+{"event": "SUMMARY", "timestamp": 1776988033.162333, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 21, "total": 21}}
+{"event": "SUMMARY", "timestamp": 1776988073.680686, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 0, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988075.688308, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 0, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988073.645326, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 1, "total": 2}}
+{"event": "SUMMARY", "timestamp": 1776988025.22192, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 2, "total": 3}}
+{"event": "SUMMARY", "timestamp": 1776988028.535404, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 4, "total": 5}}
+{"event": "SUMMARY", "timestamp": 1776988033.301139, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 6, "total": 7}}
+{"event": "SUMMARY", "timestamp": 1776988028.522075, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 7, "total": 8}}
+{"event": "SUMMARY", "timestamp": 1776988105.505324, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988109.437219, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988064.597086, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 1, "normal_rate": 10, "total": 11}}
+{"event": "SUMMARY", "timestamp": 1776988073.601025, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 2, "normal_rate": 12, "total": 14}}
+{"event": "SUMMARY", "timestamp": 1776987319.691009, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 2, "normal_rate": 14, "total": 16}}
+{"event": "SUMMARY", "timestamp": 1776988132.291578, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988105.559321, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 20, "total": 20}}
+{"event": "SUMMARY", "timestamp": 1776988109.609856, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 23, "total": 23}}
+{"event": "SUMMARY", "timestamp": 1776988132.654726, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 24, "total": 24}}
+{"event": "SUMMARY", "timestamp": 1776988185.029987, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988190.893811, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988145.349653, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 6, "total": 6}}
+{"event": "SUMMARY", "timestamp": 1776988078.896344, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 8, "total": 8}}
+{"event": "SUMMARY", "timestamp": 1776988184.590656, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 1, "normal_rate": 10, "total": 11}}
+{"event": "SUMMARY", "timestamp": 1776988190.926849, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 2, "normal_rate": 12, "total": 14}}
+{"event": "SUMMARY", "timestamp": 1776988283.649807, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988304.593623, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 1, "normal_rate": 0, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988132.362638, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 2, "normal_rate": 2, "total": 4}}
+{"event": "SUMMARY", "timestamp": 1776988375.737595, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 0, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988373.64023, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 1, "total": 2}}
+{"event": "SUMMARY", "timestamp": 1776988111.236204, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 3, "total": 4}}
+{"event": "SUMMARY", "timestamp": 1776988373.60803, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 1, "syn_rate": 0, "normal_rate": 4, "total": 5}}
+{"event": "SUMMARY", "timestamp": 1776988428.917305, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 1, "total": 1}}
+{"event": "SUMMARY", "timestamp": 1776988390.720466, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 19, "total": 19}}
+{"event": "SUMMARY", "timestamp": 1776988028.229028, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 0, "normal_rate": 21, "total": 21}}
+{"event": "SUMMARY", "timestamp": 1776988424.593825, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 1, "normal_rate": 21, "total": 22}}
+{"event": "SUMMARY", "timestamp": 1776988428.96982, "status": "NORMAL", "threat_level": "LOW", "metrics": {"http_rate": 0, "syn_rate": 2, "normal_rate": 23, "total": 25}}
