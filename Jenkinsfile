@@ -24,56 +24,68 @@ pipeline {
 
     stage('Validate') {
       steps {
-        powershell 'python -m py_compile server.py'
-        powershell 'docker compose config'
-        powershell '''
-          $required = @(
-            "index.html",
-            "dashboard.html",
-            "monitor.html",
-            "alerts.html",
-            "analytics.html",
-            "app.js",
-            "styles.css",
-            "server.py",
-            "ids_logs.json"
-          )
+        sh '''
+          set -eu
+          docker compose config >/dev/null
 
-          foreach ($file in $required) {
-            if (-not (Test-Path $file)) {
-              throw "Missing required project file: $file"
-            }
-          }
+          required_files="
+          index.html
+          dashboard.html
+          monitor.html
+          alerts.html
+          analytics.html
+          app.js
+          styles.css
+          server.py
+          ids_logs.json
+          scripts/deploy.sh
+          "
+
+          for file in $required_files; do
+            [ -f "$file" ] || { echo "Missing required project file: $file"; exit 1; }
+          done
+
+          grep -q "fetch(" app.js
+          grep -q "Dashboard" dashboard.html
+          grep -q "Live Monitor" monitor.html
+          grep -q "Alerts" alerts.html
+          grep -q "Analytics" analytics.html
+          grep -q "SUMMARY" ids_logs.json
         '''
       }
     }
 
     stage('Deploy') {
       steps {
-        powershell '.\\scripts\\deploy.ps1'
+        sh 'chmod +x scripts/deploy.sh && ./scripts/deploy.sh'
       }
     }
 
     stage('Smoke Test') {
       steps {
-        powershell '''
-          $response = Invoke-WebRequest -UseBasicParsing $env:APP_URL
-          if ($response.StatusCode -ne 200) {
-            throw "App health check failed with status $($response.StatusCode)"
-          }
+        sh '''
+          set -eu
 
-          $logs = Invoke-WebRequest -UseBasicParsing "$env:APP_URL/ids_logs.json"
-          if ($logs.StatusCode -ne 200) {
-            throw "Log file check failed with status $($logs.StatusCode)"
-          }
+          curl -fsS "$APP_URL/" >/tmp/app_index.html
+          grep -qi "dashboard" /tmp/app_index.html
 
-          $pages = $env:APP_PAGES.Split(",")
-          foreach ($page in $pages) {
-            $pageResponse = Invoke-WebRequest -UseBasicParsing "$env:APP_URL/$page"
-            if ($pageResponse.StatusCode -ne 200) {
-              throw "Page check failed for $page with status $($pageResponse.StatusCode)"
-            }
-          }
+          curl -fsS "$APP_URL/ids_logs.json" >/tmp/ids_logs.json
+          grep -q '"event"' /tmp/ids_logs.json
+          grep -Eq '"SUMMARY"|"ALERT"' /tmp/ids_logs.json
+
+          OLD_IFS="$IFS"
+          IFS=','
+          for page in $APP_PAGES; do
+            page_file="/tmp/$page"
+            curl -fsS "$APP_URL/$page" > "$page_file"
+            case "$page" in
+              dashboard.html) grep -q "System Status" "$page_file" ;;
+              monitor.html) grep -q "Connections Over Time" "$page_file" ;;
+              alerts.html) grep -q "Alert Log" "$page_file" ;;
+              analytics.html) grep -q "Traffic Statistics" "$page_file" ;;
+            esac
+          done
+          IFS="$OLD_IFS"
         '''
       }
     }

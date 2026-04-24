@@ -48,8 +48,9 @@ Pipeline flow:
 Files added for CI/CD:
 
 - `Jenkinsfile`
-- `scripts/deploy.ps1`
+- `scripts/deploy.sh`
 - `CI_CD_SETUP.md`
+- `Dockerfile.jenkins`
 
 ## Optional: run ngrok inside Docker
 

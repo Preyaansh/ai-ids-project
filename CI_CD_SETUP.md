@@ -13,8 +13,9 @@ This project supports a simple CI/CD flow:
 ## Project files used for CI/CD
 
 - `Jenkinsfile`
-- `scripts/deploy.ps1`
+- `scripts/deploy.sh`
 - `docker-compose.yml`
+- `Dockerfile.jenkins`
 
 ## Before starting
 
@@ -133,8 +134,8 @@ When you push code:
    - required frontend files exist
 5. Jenkins runs:
 
-```powershell
-.\\scripts\\deploy.ps1
+```sh
+./scripts/deploy.sh
 ```
 
 6. That script:
@@ -150,3 +151,33 @@ If all checks pass, deployment is complete.
 ## Final flow in one line
 
 Edit code -> `git push` -> GitHub webhook -> Jenkins pipeline -> Docker redeploy -> live app updated
+## Step 0: Run Jenkins with Docker access
+
+For this pipeline to redeploy the app, Jenkins must be able to run Docker commands.
+
+Build the custom Jenkins image:
+
+```powershell
+cd C:\Users\Preyaansh Vij\Desktop\ids_data
+docker build -t ids-jenkins -f Dockerfile.jenkins .
+```
+
+Then recreate Jenkins with Docker socket access:
+
+```powershell
+docker stop jenkins
+docker rm jenkins
+docker run -d --name jenkins `
+  -u root `
+  -p 8081:8080 `
+  -p 50001:50000 `
+  -v 4bb79733feaf24562887b4e4e94cdc6a3c625bd40757cf9a0d4421d1da080f78:/var/jenkins_home `
+  -v /var/run/docker.sock:/var/run/docker.sock `
+  ids-jenkins
+```
+
+This keeps your existing Jenkins data and jobs, but gives Jenkins access to:
+
+- `docker`
+- `docker compose`
+- permission to use the Docker socket
